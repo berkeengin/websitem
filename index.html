@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <script>
+  window.onload = function() {
+    const onay = confirm("Bu site 18 yaş ve üzeri kullanıcılar içindir. 18 yaşından büyük müsünüz?");
+    if (!onay) {
+      document.body.innerHTML = "<h2 style='text-align:center; margin-top:100px;'>Üzgünüz, 18 yaşından büyük olmanız gerekiyor.</h2>";
+    }
+  };
+</script>
+  <meta charset="UTF-8" />
+  <title>Engin Tekele</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f8f8;
+      color: #2c3e50;
+      margin: 0;
+      padding: 0 20px 40px 20px;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-weight: 600;
+      font-size: 48px;
+    }
+
+    .alt-baslik {
+      font-size: 20px;
+      color: #555;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    /* Başlangıç açıklamaları */
+    .baslangic-aciklamalari {
+      max-width: 800px;
+      margin: 20px auto 40px auto;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #444;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Her satır için */
+    .aciklama-satir {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .aciklama-satir img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .aciklama-satir strong {
+      min-width: 70px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .aciklama-satir span {
+      flex: 1;
+      font-weight: 400;
+    }
+
+    .ickiler {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 0 0 20px 0;
+    }
+
+    .icki-kart {
+      width: 250px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: left;
+      color: #2c3e50;
+    }
+
+    .icki-kart img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .icki-kart h3 {
+      margin-top: 10px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .icki-kart p {
+      font-size: 15px;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .icki-kart button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      font-size: 14px;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 600;
+    }
+
+    .icki-kart button:hover {
+      background-color: #c0392b;
+    }
+
+    .fiyatlar {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #222;
+      white-space: pre-line;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+    }
+  </style>
+
+  <script>
+    function fiyatGoster(button, fiyatMetni) {
+  const fiyatDiv = button.nextElementSibling;
+  if (fiyatDiv.style.display === 'block') {
+    fiyatDiv.style.display = 'none';
+    button.innerText = 'Fiyatı Göster';
+    button.disabled = false;
+  } else {
+    fiyatDiv.style.display = 'block';
+    fiyatDiv.innerText = fiyatMetni;
+    button.innerText = 'Fiyat Gizle';
+  }
+}
+  </script>
+</head>
+
+<body>
+
+  <h1>Engin Tekele Hoş Geldiniz</h1>
+  <div class="alt-baslik">Engin Tekel fiyat ve ürün portfolyosu.<br>
+    Pazariçi, İdris Köşkü Cd., 34240 Gaziosmanpaşa/İstanbul <br> 
+    Açılış: 08:00<br> 
+    Irtibat Numarası: 05323527760 </div>
+
+  <!-- Başlangıç açıklamaları görsellerle -->
+  <div class="baslangic-aciklamalari">
+    <div class="aciklama-satir">
+      <img src="whiskey-icon.png.jpg" alt="Whiskey" />
+      <strong>Viski:</strong>
+      <span>Meşe fıçılarda yıllandırılmış, güçlü ve aromatik bir içkidir. İskoç, İrlanda ve Bourbon türleri mevcuttur.</span>
+    </div>
+    <div class="aciklama-satir">
+      <img src="cin.jpg" alt="Cin" />
+      <strong>Cin:</strong>
+      <span>Cin, ardıç meyvesi ve bitkilerle aromalandırılmış şeffaf bir içkidir. Genelde kokteyllerde kullanılır.</span>
+    </div>
+    <div class="aciklama-satir">
+      <img src="sarap.jpg" alt="Şarap" />
+      <strong>Şarap:</strong>
+      <span>Şarap, fermente üzüm suyundan yapılan klasik bir içkidir. Kırmızı, beyaz ve roze çeşitleri bulunur.</span>
+    </div>
+    <div class="aciklama-satir">
+      <img src="bira.jpg" alt="Bira" />
+      <strong>Bira:</strong>
+      <span>Bira, arpa maltı ve şerbetçiotu ile yapılan fermente bir içkidir. Lager ve ale en bilinen türleridir.</span>
+    </div>
+  </div>
+
+  <div class="ickiler">
+
+    <!-- RED LABEL -->
+    <div class="icki-kart">
+      <img src="redlabel.jpgg.webp" alt="Red Label" />
+      <h3>Red Label</h3>
+      <p>Johnnie Walker Red Label, harman viskilerin klasik temsilcisidir. Dengeli ve baharatlı yapısıyla çok tercih edilir.</p>
+      <button onclick="fiyatGoster(this, '35cl: 600 TL yerine 525 TL\n50cl: 850 TL yerine  720TL\n70cl: 1100TL yerine 950 TL \n100cl: 1500 TL yerie 1300 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+    <!-- BLACK LABEL -->
+    <div class="icki-kart">
+      <img src="jwblacklabel12-1.jpeg" alt="Black Label" />
+      <h3>Black Label</h3>
+      <p>Johnnie Walker Black Label, zengin aroması ve yumuşak tadıyla bilinen harman viskidir.</p>
+      <button onclick="fiyatGoster(this, '35cl: 850 TL yerine 745 TL\n50cl: 1200 TL yerine 1040 TL\n70cl: 1500 TL yerine  1295\n100cl: 2100 TL yerine 1740')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+    <!-- MONKEY SHOULDER -->
+    <div class="icki-kart">
+      <img src="monkey-shoulder-blended-scotch.webp" alt="Monkey Shoulder" />
+      <h3>Monkey Shoulder</h3>
+      <p>Üç farklı malt viskiden oluşan yumuşak ve tatlı aroma profiline sahip blended malt viski.</p>
+      <button onclick="fiyatGoster(this, '70cl: 1675 TL yerine 1575 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+    <!-- BALLANTINES 10 -->
+    <div class="icki-kart">
+      <img src="balantines10.jpg" alt="Ballantines 10" />
+      <h3>Ballantines 10</h3>
+      <p>Zengin ve karmaşık tadı ile bilinen 10 yıllık blended viski.</p>
+      <button onclick="fiyatGoster(this, '35cl: 700 TL yerine 560 TL\n50cl: 875 TL yerine 790 TL\n70cl: 1350 TL yerine 1070 TL\n100cl: 1700 TL yerine 1470 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+    <!-- JACK DANIELS -->
+    <div class="icki-kart">
+      <img src="jackdaniels.jpg" alt="Jack Daniels" />
+      <h3>Jack Daniels</h3>
+      <p>Tennessee viskisi, yumuşak içimi ve tatlı aroması ile tanınır.</p>
+      <button onclick="fiyatGoster(this, '35cl: 750 TL yerine 700 TL\n50cl: 1175 TL yerine 995 TL\n70cl: 1500 TL yerine 1295\n100cl: 2100 TL yerine 1795 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+    <!-- CHIVAS REGAL 12 -->
+    <div class="icki-kart">
+      <img src="chivas_hkia_product_banners_1000x1000-12.jpg.webp" alt="Chivas Regal 12" />
+      <h3>Chivas Regal 12</h3>
+      <p>Klasik İskoç harman viskisi, 12 yıllık dinlendirilmiş.</p>
+      <button onclick="fiyatGoster(this, '35cl: 650 TL yerine 490 TL\n50cl: 750 TL yerine 690 TL\n70cl: 1100 TL yerine 895 TL\n100cl: 1500TL yerine 1270')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+    <!-- TALISKER 10 -->
+    <div class="icki-kart">
+      <img src="talisker-10.png" alt="Talisker 10" />
+      <h3>Talisker 10</h3>
+      <p>İskoç adalarından güçlü ve baharatlı viski.</p>
+      <button onclick="fiyatGoster(this, '70cl: 2600TL yerine 2400 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+    <!-- GLENLIVET 12 -->
+    <div class="icki-kart">
+      <img src="glenlivet-12-year-old-double-oak-876303_1200x.jpg.webp" alt="Glenlivet 12" />
+      <h3>Glenlivet 12</h3>
+      <p>Yumuşak ve dengeli, klasik İskoç malt viskisi.</p>
+      <button onclick="fiyatGoster(this, '70cl: 2300 TL yerine 2000 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+     <div class="icki-kart">
+      <img src="gordonsgin.webp" alt="gordonsgin" />
+      <h3>Gordon's Gin</h3>
+      <p>Klasik aromalı London Dry cin markası.</p>
+      <button onclick="fiyatGoster(this, '35cl: 600 TL yerine 560\n50cl: 850 TL yerine 790\n70cl: 1300TL yerine  1070\n100cl: 1600TL yerine 1470')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+    <div class="icki-kart">
+      <img src="gilbey_sgin-2.jpg.webp" alt="gilbeysgin" />
+      <h3>Gilbey's Gin</h3>
+      <p>Gilbey's Gin, Dengeli ve yumuşak içimli cin.</p>
+      <button onclick="fiyatGoster(this, '35cl: 500 TL yerine 450\n50cl: 700 TL yerine 650\n70cl: 1000 TL yerine  900 TL\n100cl: 1300 TL yerine  1000 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+    <div class="icki-kart">
+      <img src="Beefeater-London-Dry-Gin-40-1.jpg" alt="beefeater" />
+      <h3>Beefeater Gin</h3>
+      <p>Beefeater, İngiltere'nin Londra kentinde üretilen klasik bir London Dry Gin’dir. 1863 yılından beri üretilmektedir ve en köklü cin markalarından biridir.</p>
+     <button onclick="fiyatGoster(this, '35cl: 700 TL yerine 650 TL\n50cl: 900TL yerine 820TL \n70cl: 1100 TL yerine 900 TL\n100cl: 1600 TL yerine 1300 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+    
+    <div class="icki-kart">
+      <img src="tanq-no-ten-listing.jpg" alt="tanqueray" />
+      <h3>Tanqueray No Ten</h3>
+      <p>Premium sınıf narenciye aromalı cin.</p>
+      <button onclick="fiyatGoster(this, '70cl: 1300 TL yerine 1100 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+
+    <div class="icki-kart">
+      <img src="absolut-vodka-768x768.png" alt="absolut" />
+      <h3>Absolut Vodka </h3>
+      <p>Dünyaca ünlü İsveç vodkası.</p>
+      <button onclick="fiyatGoster(this, '35cl: 700 TL yerine 650\n50cl: 850 TL yerine 790\n70cl: 1500TL yerine  1300\n100cl: 1600TL yerine 1470 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+
+    <div class="icki-kart">
+      <img src="gilbeysvodka.jpg" alt="gilbeys-vodka" />
+      <h3>Gilbey's Vodka</h3>
+      <p>Hafif ve sade içimli ekonomik vodka.</p>
+      <button onclick="fiyatGoster(this, '35cl: 400 TL yerine 360\n50cl: 600 TL yerine 525 TL\n70cl: 800 TL yerine  700TL\n100cl: 1000 TL yerine 800 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+
+    <div class="icki-kart">
+      <img src="belveder.jpg" alt="belvedere" />
+      <h3>Belvedere</h3>
+      <p>Lüks sınıf Polonya vodkası.</p>
+      <button onclick="fiyatGoster(this, '70cl: 2300 TL yerine 2000 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+    
+    <div class="icki-kart">
+      <img src="grey-goose-vodka-1-liter.webp" alt="grey-goose" />
+      <h3>Grey Gose</h3>
+      <p>Fransız buğdayından üretilmiş ultra premium vodka.</p>
+      <button onclick="fiyatGoster(this, '70cl: 3000 TL yerine 2500 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+
+    <div class="icki-kart">
+      <img src="sarafin.jpg" alt="sarafin" />
+      <h3>Sarafin</h3>
+      <p>Sarafin, kaliteli üzümlerden tek bağ (single vineyard) anlayışıyla üretilen, premium segmentte yer alan yerli şarap markasıdır</p>
+      <button onclick="fiyatGoster(this, '70cl: 2000 TL yerine 1650 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+
+    <div class="icki-kart">
+      <img src="ancyra.jpg" alt="ancyra" />
+      <h3>Ancyra</h3>
+      <p>Kavaklıdere'nin Ancyra serisi, Anadolu'nun başkenti Ankara'nın eski adı olan "Ancyra"dan esinlenerek adlandırılmıştır ve farklı üzüm çeşitlerinden üretilen beyaz, kırmızı ve roze şarapları içerir.
+       <button onclick="fiyatGoster(this, '70cl: 800 TL yerine 600 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+    
+    
+    <div class="icki-kart">
+      <img src="cankaya.jpg" alt="cankaya" />
+      <h3>Çankaya</h3>
+      <p>Taze ve meyvemsi aromalara sahip olan bu şarap, hafif içimiyle bilinir ve özellikle beyaz etler ve deniz ürünleriyle tercih edilir.</p>
+     <button onclick="fiyatGoster(this, '70cl: 800 TL yerine 600 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+    <div class="icki-kart">
+      <img src="tuborg.webp" alt="tuborg" />
+      <h3>Tuborg</h3>
+      <p>Danimarka kökenli bir marka olup Türkiye’de de üretilir; genellikle daha hafif içimli, dengeli aroması ve serinletici tadıyla bilinir.</p>
+      <button onclick="fiyatGoster(this, '50cl: 85 TL yerine 72 TL ')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+    
+    <div class="icki-kart">
+      <img src="efesmalt.jpg" alt="efesmalt" />
+      <h3>Efes Malt</h3>
+      <p>Sadece malt kullanılarak üretilen, karamelimsi ve gövdeli tadıyla ön plana çıkan, Efes'in daha yoğun aromalı bira çeşididir.</p>
+      <button onclick="fiyatGoster(this, '50cl: 80 TL yerine 65 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+    
+    <div class="icki-kart">
+      <img src="efespilsen.jpg" alt="efespilsen" />
+      <h3>Efes Pilsen</h3>
+      <p>Türkiye’nin en bilinen birasıdır; hafif acılığı, ferahlatıcı içimi ve klasik pilsner tarzıyla geniş kitlelere hitap eder.</p>
+      <button onclick="fiyatGoster(this, '50cl: 85 TL yerine 75 TL')">Fiyatı Göster</button>
+      <div class="fiyatlar" style="display:none;"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
